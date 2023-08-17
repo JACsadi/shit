@@ -14,6 +14,7 @@
     </form>
     <div class="get">hi</div>
     <script>
+      const gettt = document.querySelector(".get");
       document
         .getElementById("dataForm")
         .addEventListener("submit", function (event) {
@@ -21,7 +22,6 @@
 
           const name = document.getElementById("name").value;
           const email = document.getElementById("email").value;
-          const gettt = document.querySelector(".get");
           const newData = {
             name: name,
             email: email,
@@ -46,6 +46,7 @@
             });
         });
       gettt.addEventListener("click", () => {
+        console.log("hi");
         const ab = [];
         fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
           .then((a) => a.json())
