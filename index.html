@@ -12,7 +12,7 @@
       <input type="email" id="email" name="email" /><br /><br />
       <button type="submit">Append Data</button>
     </form>
-    <div class="get">hi</div>
+    <button class="get">hiiii</button>
     <script>
       const gettt = document.querySelector(".get");
       document
@@ -26,8 +26,6 @@
             name: name,
             email: email,
           };
-
-          // Send the data to the API
           fetch("https://i-guess-i-am-making-a-rest-api.vercel.app/a", {
             method: "POST",
             headers: {
@@ -38,11 +36,9 @@
             .then((response) => response.json())
             .then((data) => {
               console.log("Data appended successfully:", data);
-              // You can perform further actions here, like showing a success message.
             })
             .catch((error) => {
               console.error("Error appending data:", error);
-              // Handle errors here, like showing an error message to the user.
             });
         });
       gettt.addEventListener("click", () => {
