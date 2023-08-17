@@ -12,7 +12,7 @@
       <input type="email" id="email" name="email" /><br /><br />
       <button type="submit">Append Data</button>
     </form>
-
+    <div class="get">hi</div>
     <script>
       document
         .getElementById("dataForm")
@@ -21,7 +21,7 @@
 
           const name = document.getElementById("name").value;
           const email = document.getElementById("email").value;
-
+          const gettt = document.querySelector(".get");
           const newData = {
             name: name,
             email: email,
@@ -45,6 +45,13 @@
               // Handle errors here, like showing an error message to the user.
             });
         });
+      gettt.addEventListener("click", () => {
+        const ab = [];
+        fetch("https://i-guess-i-am-making-a-rest-api.vercel.app")
+          .then((a) => a.json())
+          .then((a) => ab.push(...a));
+        console.log(ab);
+      });
     </script>
   </body>
 </html>
